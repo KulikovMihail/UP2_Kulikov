@@ -80,7 +80,7 @@
     HorizontalAlignment="Left"
     VerticalAlignment="Top"
     Height="40"
-    Margin="777,81,0,0"
+    Margin="57,69,0,0"
     Click="btnAuth_Click"
     />
         <Button
@@ -91,7 +91,7 @@
     HorizontalAlignment="Left"
     VerticalAlignment="Top"
     Height="40"
-    Margin="901,83,0,0"
+    Margin="208,69,0,0"
     Click="btnMyAdds_Click"
     
     />
