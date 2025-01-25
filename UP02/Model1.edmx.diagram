@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8963adad90c4ad3b11dc7326c52940b" Name="Diagram1">
+        <EntityTypeShape EntityType="Up_2_KulikovModel.Ads" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Up_2_KulikovModel.AdStatuses" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Up_2_KulikovModel.Categories" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Up_2_KulikovModel.Cities" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Up_2_KulikovModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Up_2_KulikovModel.Types" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Up_2_KulikovModel.Users" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <AssociationConnector Association="Up_2_KulikovModel.FK__Ads__CategoryID__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="Up_2_KulikovModel.FK__Ads__StatusID__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="Up_2_KulikovModel.FK__Ads__TypeID__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="Up_2_KulikovModel.FK__Ads__UserID__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="Up_2_KulikovModel.FK_Ads_Cities" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

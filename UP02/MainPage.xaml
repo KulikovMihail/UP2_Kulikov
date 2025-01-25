@@ -1,0 +1,100 @@
+﻿<Page x:Class="UP02.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UP02"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="1200"
+      Title="Барахолка"
+      
+      Background="AliceBlue">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22*"/>
+            <RowDefinition Height="53*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Left" Margin="10,5,0,55" Width="977">
+            <TextBlock Text="Город:"/>
+            <ComboBox x:Name="CityFilter" Width="120" Margin="2" SelectionChanged="FilterChanged" VerticalAlignment="Top" Height="43"/>
+            <TextBlock Text="Тип:" VerticalAlignment="Top" Margin="2" />
+            <ComboBox x:Name="TypeFilter" Width="120" Margin="2" SelectionChanged="TypeFilter_SelectionChanged" VerticalAlignment="Top" Height="42"/>
+            <TextBlock Text="Категория:" VerticalAlignment="Top" Margin="2" />
+            <ComboBox x:Name="CategoryFilter" Width="120" Margin="2" SelectionChanged="CategoryFilter_SelectionChanged" VerticalAlignment="Top" Height="43"/>
+            <TextBlock Text="Статус:" VerticalAlignment="Top" Margin="2" />
+            <ComboBox x:Name="StatusFilter" Width="120" Margin="2" SelectionChanged="StatusFilter_SelectionChanged" VerticalAlignment="Top" Height="43"/>
+            <TextBox x:Name="TitleSearch" Width="150" Margin="2" KeyUp="TitleSearch_KeyUp" VerticalAlignment="Top"/>
+            <Button x:Name="ClearFiltersButton" Width="124" Click="ClearFilters_Click" Content="Очистить фильтры" Height="32"  VerticalAlignment="Top" />
+        </StackPanel>
+        <ListView Name="ListUser" Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="2" HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Width="500">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="150"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Image Width="250" Grid.Row="1" Stretch="UniformToFill" HorizontalAlignment="Center">
+                            <Image.Source>
+                                <Binding Path="Photo">
+                                    <Binding.TargetNullValue>
+                                        <ImageSource>\Resourses\default.png</ImageSource>
+                                    </Binding.TargetNullValue>
+                                </Binding>
+                            </Image.Source>
+                        </Image>
+                        <TextBlock VerticalAlignment="Center" TextAlignment="Center" Width="200" Grid.Row="0" TextWrapping="Wrap" Text="{Binding Title }" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock VerticalAlignment="Center" TextAlignment="Left" Width="200" Grid.Row="3" HorizontalAlignment="Center" FontSize="16" Text="{Binding Price}"/>
+                        <TextBlock VerticalAlignment="Center" TextAlignment="Center" Grid.Row="2" 
+           HorizontalAlignment="Center" FontSize="16">
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{}{0} | {1}">
+                                    <Binding Path="ad_types.ad_type_name" />
+                                    <Binding Path="categories.category_name" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" TextAlignment="Left"  Grid.Row="4" HorizontalAlignment="Center" FontSize="16" Text="{Binding Description}"/>
+                        <TextBlock VerticalAlignment="Center" TextAlignment="Right" Width="200" Grid.Row="3" HorizontalAlignment="Center" FontSize="16" Text="{Binding Cities.CityName}"/>
+                        <TextBlock VerticalAlignment="Center" TextAlignment="Right" Width="200" Grid.Row="6" HorizontalAlignment="Center" FontSize="16" Text="{Binding PublicationDate }"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Image Source="/Resourses/logo1.png" Height="82" Margin="1076,10,16,0" VerticalAlignment="Top"/>
+        <Button
+    x:Name="btnAuth"
+    Content="Авторизоваться"
+    Width="100"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Top"
+    Height="40"
+    Margin="777,81,0,0"
+    Click="btnAuth_Click"
+    />
+        <Button
+    x:Name="btnMyAdds"
+    Content="Мои объявления"
+    IsEnabled="False"
+    Width="100"
+    HorizontalAlignment="Left"
+    VerticalAlignment="Top"
+    Height="40"
+    Margin="901,83,0,0"
+    Click="btnMyAdds_Click"
+    
+    />
+        <TextBlock x:Name="profile" Margin="1039,107,10,9" TextWrapping="Wrap"/>
+    </Grid>
+</Page>
